@@ -1,0 +1,29 @@
+.wheel__component__container {
+  width: 400px;
+  margin: 0 auto;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  margin-top: 20px;
+  padding: 45px;
+}
+.wheel__item__container {
+  text-align: center;
+}
+.salesman__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+.wheel__input {
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  font-size: 20px;
+  padding: 10px;
+}
+.wheel__labels{
+    padding: 10px;
+}

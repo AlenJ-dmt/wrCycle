@@ -1,0 +1,29 @@
+.sign {
+  border: 1px solid black;
+  width: 500px;
+  height: 200px;
+}
+.main__section {
+  margin-top: 90px;
+  width: 100%;
+  text-align: center;
+}
+.calendar__contatiner{
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    height: 60px;
+    margin: 0 auto
+}
+.calendar__Label{
+    margin: 0;
+    font-weight: 800;
+    margin-right: 10px;
+}
+.react-datepicker__input-container input {
+  height: 30px;
+  font-size: 20px;
+}
+.react-datepicker-wrapper {
+  height: 20px;
+}

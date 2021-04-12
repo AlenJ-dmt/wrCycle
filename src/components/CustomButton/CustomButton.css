@@ -1,0 +1,17 @@
+.custom__button{
+    border-radius: 25px;
+    height: 50px;
+    width: 200px;
+    outline: none;
+    border: none;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 0 3px #999;
+}
+
+.custom__button:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(2px);
+  }

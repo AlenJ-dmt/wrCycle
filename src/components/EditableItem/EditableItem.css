@@ -1,0 +1,30 @@
+.editable__item__container {
+  border: 1px black solid;
+  border-radius: 25px;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 20px;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 5px;
+}
+.status__container{
+  display: flex;
+}
+.status__label{
+  font-size: 50px;
+}
+.listo__container{
+  font-size: 50px;
+}
+.right__container{
+  display: flex;
+  flex: 1;
+}
+.left__container{
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
