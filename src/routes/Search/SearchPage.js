@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useState } from "react";
+import React, { useContext } from "react";
 import EditableItem from "../../components/EditableItem/EditableItem";
 import wheelcontext from "../../context";
 import "./SearchPage.css";

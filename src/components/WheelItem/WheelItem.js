@@ -1,12 +1,11 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./WheelItem.css";
 import CustomButton from "../CustomButton/CustomButtom";
 import { useHistory } from "react-router-dom";
 import WheelsApiService from "../../services/wheel-api-service";
-import contexts from "../../context";
+
 
 const WheelItem = () => {
-  const context = useContext(contexts);
   const [today, setToday] = useState("");
 
   useEffect(() => {

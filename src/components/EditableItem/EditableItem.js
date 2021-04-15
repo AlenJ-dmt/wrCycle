@@ -22,7 +22,6 @@ const EditableItem = (props) => {
     created,
     eta,
     phone,
-    completedby,
     isready,
     home,
     machine,

@@ -36,7 +36,7 @@ const Header = () => {
           Invoice #: {"  "}
           <input
             type="text"
-            maxlength="6"
+            maxLength="6"
             value={wheelInvoice}
             onChange={(ev) => {
               setWheelInvoice(ev.target.value);

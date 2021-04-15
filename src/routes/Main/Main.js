@@ -11,7 +11,7 @@ const Main = () => {
 
   const [startDate, setStartDate] = useState(new Date());
   const [notDone, setNotDone] = useState(0);
-  const [repairQty, setRepairQty] = useState(0);
+  // const [repairQty, setRepairQty] = useState(0);
 
   useEffect(() => {
     getRepairsfromDate();
@@ -48,13 +48,13 @@ const Main = () => {
 
     let counter = 0;
 
-    WheelAPiService.getRepairsByWeek(currentWeek)
-      .then((jsonRes) => {
-        jsonRes.forEach(
-          (repair) => (counter = counter + parseInt(repair.quantity))
-        );
-      })
-      .then(() => setRepairQty(counter));
+    // WheelAPiService.getRepairsByWeek(currentWeek)
+    //   .then((jsonRes) => {
+    //     jsonRes.forEach(
+    //       (repair) => (counter = counter + parseInt(repair.quantity))
+    //     );
+    //   })
+    //   .then(() => setRepairQty(counter));
   };
 
   const populateList = () => {
