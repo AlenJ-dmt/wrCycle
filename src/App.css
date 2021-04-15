@@ -2,11 +2,21 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.report__icon__container {
+  height: 100px;
+  width: 100px;
+  position: fixed;
+  bottom: 35px;
+  right: 35px;
+  border: 1px solid #334da7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  background-color: #334da7;
+  cursor: pointer;
+  outline: none;
 }
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

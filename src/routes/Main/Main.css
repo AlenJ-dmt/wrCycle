@@ -27,3 +27,7 @@
 .react-datepicker-wrapper {
   height: 20px;
 }
+.onProgress__container{
+  font-size: 20px;
+  font-weight: 700;
+}

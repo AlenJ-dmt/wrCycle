@@ -9,22 +9,73 @@
   width: 90%;
   margin: 0 auto;
   margin-top: 5px;
+  position: relative;
 }
-.status__container{
+.status__container {
   display: flex;
 }
-.status__label{
+.status__label {
   font-size: 50px;
 }
-.listo__container{
+.listo__container {
   font-size: 50px;
-}
-.right__container{
   display: flex;
   flex: 1;
+  justify-content: center;
 }
-.left__container{
+.right__container {
   display: flex;
-  flex: 1;
+  flex: 0.9;
+  justify-content: center;
+}
+.left__container {
+  display: flex;
+  flex: 0.3;
   flex-direction: column;
+}
+.icon__container {
+  margin-top: 10px;
+}
+/* .invoice__container{
+  position: absolute;
+  display: flex;
+  flex: .1;
+} */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 89%);
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+.modal_content {
+  background-color: white;
+  border: 1px solid black;
+  height: 400px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+.label__holder {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: x-large;
+  margin-top: 15px;
+}
+.options__holder {
+  width: 80%;
+  margin: 0 auto;
+}
+.input__box {
+  font-size: x-large;
+  height: 30px;
+  width: 30px;
 }

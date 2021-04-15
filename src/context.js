@@ -2,6 +2,8 @@ import React from "react";
 
 const WheelContext = React.createContext({
   searchResult: [],
+  reportList: [],
+  setReportList: [],
   setResults: () => {},
   mainList: [],
   setMainList: () => {},
@@ -15,10 +17,16 @@ export class WheelProvider extends React.Component {
   state = {
     searchResult: [],
     mainList: [],
+    reportList: [],
     textMessage:
       "Thank you for your business, Your wheel is ready to be pick up!",
   };
 
+  setReportList = (rList) => {
+    this.setState({
+      reportList: rList,
+    });
+  };
   setMainList = (newList) => {
     this.setState({
       mainList: newList,
@@ -38,6 +46,8 @@ export class WheelProvider extends React.Component {
       setMainList: this.setMainList,
       setResults: this.setResults,
       textMessage: this.state.textMessage,
+      reportList: this.state.reportList,
+      setReportList: this.setReportList,
     };
 
     return (

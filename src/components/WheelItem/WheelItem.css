@@ -1,5 +1,5 @@
 .wheel__component__container {
-  width: 400px;
+  width: 480px;
   margin: 0 auto;
   text-align: left;
   display: flex;
@@ -23,7 +23,13 @@
   outline: none;
   font-size: 20px;
   padding: 10px;
+  
 }
 .wheel__labels{
     padding: 10px;
+    font-weight: 700;
+}
+.input__container{
+  display: flex;
+  justify-content: space-between;
 }

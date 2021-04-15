@@ -10,10 +10,7 @@ const SearchPage = () => {
     return context.searchResult.map((result, idx) => (
       <EditableItem
         key={idx}
-        invoiceNum={result.invoice}
-        salesman={result.salesperson}
-        date={result.created}
-        phone={result.phone}
+        wheelInfo={result}
       />
     ));
   };

@@ -32,9 +32,28 @@ const WheelsApiService = {
       }),
     });
   },
-  getRepairsByDate(pickedDate){
+  getRepairsByDate(pickedDate) {
     return fetch(
       `${config.API_ENDPOINT}/api/wheelrepair/searchByDate?pickedDate=${pickedDate}`
+    ).then((wRepair) => wRepair.json());
+  },
+  getRepairsByWeek(week) {
+    return fetch(
+      `${config.API_ENDPOINT}/api/wheelrepair/searchByWeek?week=${week}`
+    ).then((wRepair) => wRepair.json());
+  },
+  updateRepairOnceReady(updatedRepair) {
+    return fetch(`${config.API_ENDPOINT}/api/wheelrepair/complete`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updatedRepair),
+    });
+  },
+  getNotReadyRepair(){
+    return fetch(
+      `${config.API_ENDPOINT}/api/wheelrepair/inProgress`
     ).then((wRepair) => wRepair.json());
   }
 };

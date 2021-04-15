@@ -1,0 +1,13 @@
+.report__section {
+  margin-top: 90px;
+}
+.report__box {
+  height: 300px;
+  font-size: 25px;
+  width: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: left;
+}

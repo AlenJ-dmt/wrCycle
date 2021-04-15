@@ -1,7 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import "./WheelItem.css";
 import CustomButton from "../CustomButton/CustomButtom";
-import store from "../../store";
 import { useHistory } from "react-router-dom";
 import WheelsApiService from "../../services/wheel-api-service";
 import contexts from "../../context";
@@ -47,43 +46,48 @@ const WheelItem = () => {
       phone: `+1${state.phone}`,
       eta: state.eta,
       isready: false,
-      completedby: ""
+      completedby: "",
+      completedbyweek: "",
+      home: false,
+      machine: false,
+      polished: false,
+      multipiece: false,
     };
-    console.log("hello");
-    WheelsApiService.initRepair(newRepair).then((res) => console.log(res));
 
-    history.push("/");
+    WheelsApiService.initRepair(newRepair).then((res) => history.push("/"));
   };
 
   return (
     <div className="wheel__item__container">
       <form className="wheel__component__container">
-        <label className="wheel__labels">
-          Invoice #:{" "}
+        <div className="input__container">
+          <label className="wheel__labels">Invoice #: </label>
           <input
+            type="number"
             name="invoiceNum"
             className="wheel__input"
             onChange={(ev) => inputChangeHandler(ev)}
           />
-        </label>
-        <label className="wheel__labels">
-          Phone #:{" "}
+        </div>
+        <div className="input__container">
+          <label className="wheel__labels">Phone #: </label>
           <input
+            type="number"
             name="phone"
             className="wheel__input"
             onChange={(ev) => inputChangeHandler(ev)}
           />
-        </label>
-        <label className="wheel__labels">
-          ETA :{" "}
+        </div>
+        {/* <div className="input__container">
+          <label className="wheel__labels">ETA : </label>
           <input
             name="eta"
             className="wheel__input"
             onChange={(ev) => inputChangeHandler(ev)}
           />
-        </label>
-        <div className="wheel__labels">
-          Vendedor:
+        </div> */}
+        <div className="input__container">
+          <label className="wheel__labels">Vendedor:</label>
           <input
             name="vendedor"
             onChange={(ev) => inputChangeHandler(ev)}
@@ -91,24 +95,25 @@ const WheelItem = () => {
             value={state.vendedor}
           />
         </div>
-        <label className="wheel__labels">
-          Qty
+        <div className="input__container">
+          <label className="wheel__labels">Qty</label>
           <input
+            type="number"
             name="quantity"
             onChange={(ev) => inputChangeHandler(ev)}
             className="wheel__input"
             value={state.quantity}
           />
-        </label>
-        <label className="wheel__labels">
-          Description:{" "}
+        </div>
+        <div className="input__container">
+          <label className="wheel__labels">Description: </label>
           <input
             name="description"
             onChange={(ev) => inputChangeHandler(ev)}
             className="wheel__input"
             value={state.description}
           />
-        </label>
+        </div>
       </form>
       <CustomButton
         color="#33C98D"

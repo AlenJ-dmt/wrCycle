@@ -28,3 +28,6 @@
     font-weight: 600;
     padding: 10px;
 }
+.home__logo{
+  cursor: pointer;
+}

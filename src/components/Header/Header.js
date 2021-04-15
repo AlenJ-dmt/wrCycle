@@ -8,7 +8,7 @@ import { AiFillHome } from "react-icons/ai";
 
 const Header = () => {
   const history = useHistory();
-  const [wheelInvoice, setWheelInvoice] = useState(null);
+  const [wheelInvoice, setWheelInvoice] = useState("");
 
   const context = useContext(WheelContext);
 
@@ -20,18 +20,24 @@ const Header = () => {
     WheelApiService.searchInvoice(searchedWheel).then((wr) => {
       context.setResults(wr);
     });
-
+    searchedWheel = "";
     history.push("/search");
   };
 
   return (
     <header className="app_header">
       <div className="header__container">
-        <AiFillHome size={50} onClick={() => history.push("/")} />
+        <AiFillHome
+          size={50}
+          className="home__logo"
+          onClick={() => history.push("/")}
+        />
         <label className="search__bar__label">
-          Buscar: {"  "}
+          Invoice #: {"  "}
           <input
-          maxLength="6"
+            type="text"
+            maxlength="6"
+            value={wheelInvoice}
             onChange={(ev) => {
               setWheelInvoice(ev.target.value);
             }}
@@ -42,7 +48,7 @@ const Header = () => {
           onClickDo={() => findWheel(wheelInvoice)}
           // styles={}
           color={"#15B47E"}
-          title="Buscar"
+          title="Search"
         />
         <CustomButtom
           onClickDo={() => moveToNewRepair()}
