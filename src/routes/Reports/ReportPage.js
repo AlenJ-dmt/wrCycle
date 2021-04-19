@@ -50,13 +50,13 @@ const ReportPage = () => {
         jsonRes.forEach((repair) => {
           counter = counter + parseInt(repair.quantity);
           if (repair.home) {
-            homeContador = homeContador + 1;
+            homeContador = homeContador + parseInt(repair.quantity);
           } else if (repair.machine) {
-            machineContador = machineContador + 1;
+            machineContador = machineContador + parseInt(repair.quantity);
           } else if (repair.polished) {
-            polishedContador = polishedContador + 1;
+            polishedContador = polishedContador + parseInt(repair.quantity);
           } else if (repair.multipiece) {
-            multiContador = multiContador + 1;
+            multiContador = multiContador + parseInt(repair.quantity);
           }
         });
       })
