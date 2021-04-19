@@ -23,9 +23,11 @@ const Main = () => {
       startDate.getMonth() + 1
     }/${startDate.getDate()}/${startDate.getFullYear()}`;
 
-    WheelAPiService.getRepairsByDate(pickedDate).then((wRepairList) => {
-      context.setMainList(wRepairList);
-    });
+    WheelAPiService.getRepairsByDate(pickedDate)
+      .then((wRepairList) => {
+        context.setMainList(wRepairList);
+      })
+      .catch((err) => console.log(err));
 
     let counter = 0;
 
@@ -35,7 +37,7 @@ const Main = () => {
           (repair) => (counter = counter + parseInt(repair.quantity))
         );
       })
-      .then(() => setNotDone(counter));
+      .then(() => setNotDone(counter)).catch(err => console.log(err))
   };
 
   const getRepairsByweek = () => {

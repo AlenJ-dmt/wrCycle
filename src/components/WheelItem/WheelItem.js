@@ -4,7 +4,6 @@ import CustomButton from "../CustomButton/CustomButtom";
 import { useHistory } from "react-router-dom";
 import WheelsApiService from "../../services/wheel-api-service";
 
-
 const WheelItem = () => {
   const [today, setToday] = useState("");
 
@@ -33,6 +32,20 @@ const WheelItem = () => {
   const inputChangeHandler = (ev) => {
     ev.preventDefault();
     setState({ ...state, [ev.target.name]: ev.target.value });
+  };
+
+  const setVendedor = (person) => {
+    let phoneNumber = "";
+
+    person === "Sabino"
+      ? (phoneNumber = "8327901665")
+      : (phoneNumber = "7138207229");
+
+    setState({ ...state, vendedor: person, phone: phoneNumber });
+  };
+
+  const setQty = (qty) => {
+    setState({ ...state, quantity: qty });
   };
 
   const initRepair = () => {
@@ -64,11 +77,12 @@ const WheelItem = () => {
           <input
             type="number"
             name="invoiceNum"
+            maxLength="6"
             className="wheel__input"
             onChange={(ev) => inputChangeHandler(ev)}
           />
         </div>
-        <div className="input__container">
+        {/* <div className="input__container">
           <label className="wheel__labels">Phone #: </label>
           <input
             type="number"
@@ -76,7 +90,7 @@ const WheelItem = () => {
             className="wheel__input"
             onChange={(ev) => inputChangeHandler(ev)}
           />
-        </div>
+        </div> */}
         {/* <div className="input__container">
           <label className="wheel__labels">ETA : </label>
           <input
@@ -86,22 +100,47 @@ const WheelItem = () => {
           />
         </div> */}
         <div className="input__container">
-          <label className="wheel__labels">Vendedor:</label>
-          <input
-            name="vendedor"
-            onChange={(ev) => inputChangeHandler(ev)}
-            className="wheel__input"
-            value={state.vendedor}
-          />
+          <div className="wheel__labels">
+            Salesman:
+            <label className="wheel__labels">Lalo:</label>
+            <input
+              type="checkbox"
+              onChange={() => setVendedor("Lalo")}
+              className="wheel__input_checkbox"
+            />
+            <label className="wheel__labels">Sabino:</label>
+            <input
+              type="checkbox"
+              onChange={() => setVendedor("Sabino")}
+              className="wheel__input_checkbox"
+            />
+          </div>
         </div>
         <div className="input__container">
-          <label className="wheel__labels">Qty</label>
+          <div className="wheel__labels">Qty: </div>
+          <label className="wheel__labels">1</label>
           <input
-            type="number"
-            name="quantity"
-            onChange={(ev) => inputChangeHandler(ev)}
-            className="wheel__input"
-            value={state.quantity}
+            type="checkbox"
+            onChange={() => setQty("1")}
+            className="wheel__input_checkbox"
+          />
+          <label className="wheel__labels">2</label>
+          <input
+            type="checkbox"
+            onChange={() => setQty("2")}
+            className="wheel__input_checkbox"
+          />
+          <label className="wheel__labels">3</label>
+          <input
+            type="checkbox"
+            onChange={() => setQty("3")}
+            className="wheel__input_checkbox"
+          />
+          <label className="wheel__labels">4</label>
+          <input
+            type="checkbox"
+            onChange={() => setQty("4")}
+            className="wheel__input_checkbox"
           />
         </div>
         <div className="input__container">

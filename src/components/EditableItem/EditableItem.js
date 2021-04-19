@@ -57,7 +57,7 @@ const EditableItem = (props) => {
       currentWeek = Math.ceil(currentWeek);
     }
 
-    WheelApiService.wRepairCompleted(phone, context.textMessage)
+    WheelApiService.wRepairCompleted(phone, `El rin o los rines del invoice ${invoice} estan listos`)
       .then((res) => res.json())
       .then((jsonres) => console.log(jsonres))
       .catch((err) => console.log("ping", err));

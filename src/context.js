@@ -7,6 +7,8 @@ const WheelContext = React.createContext({
   setResults: () => {},
   mainList: [],
   setMainList: () => {},
+  invoiceNumber: "",
+  setInvoiceNumber: () => {},
   textMessage:
     "Thank you for your business, Your wheel is ready to be pick up!",
 });
@@ -18,10 +20,16 @@ export class WheelProvider extends React.Component {
     searchResult: [],
     mainList: [],
     reportList: [],
+    invoiceNumber: "",
     textMessage:
       "Thank you for your business, Your wheel is ready to be pick up!",
   };
 
+  setInvoiceNumber = (num) =>{
+    this.setState({
+      invoiceNumber: num
+    })
+  }
   setReportList = (rList) => {
     this.setState({
       reportList: rList,
@@ -48,6 +56,8 @@ export class WheelProvider extends React.Component {
       textMessage: this.state.textMessage,
       reportList: this.state.reportList,
       setReportList: this.setReportList,
+      invoiceNumber: this.state.invoiceNumber,
+      setInvoiceNumber: this.setInvoiceNumber,
     };
 
     return (

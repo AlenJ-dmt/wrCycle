@@ -23,13 +23,18 @@
   outline: none;
   font-size: 20px;
   padding: 10px;
-  
 }
-.wheel__labels{
-    padding: 10px;
-    font-weight: 700;
+.wheel__labels {
+  padding: 10px;
+  font-weight: 700;
 }
-.input__container{
+.input__container {
   display: flex;
   justify-content: space-between;
+  margin-top: 35px;
+}
+.wheel__input_checkbox {
+  font-size: x-large;
+  height: 30px;
+  width: 30px;
 }
