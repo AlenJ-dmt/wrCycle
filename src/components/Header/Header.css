@@ -4,6 +4,7 @@
   position: fixed;
   top: 0;
   background-color: aliceblue;
+  z-index: 3;
 }
 .header__container {
   display: flex;
