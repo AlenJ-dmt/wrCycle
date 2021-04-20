@@ -57,7 +57,10 @@ const EditableItem = (props) => {
       currentWeek = Math.ceil(currentWeek);
     }
 
-    WheelApiService.wRepairCompleted(phone, `El rin o los rines del invoice ${invoice} estan listos`)
+    WheelApiService.wRepairCompleted(
+      phone,
+      `El rin o los rines del invoice ${invoice} estan listos`
+    )
       .then((res) => res.json())
       .then((jsonres) => console.log(jsonres))
       .catch((err) => console.log("ping", err));
@@ -84,7 +87,7 @@ const EditableItem = (props) => {
 
     WheelApiService.updateRepairOnceReady(updatedRepair).then((res) => {
       setIsLoading(false);
-      setOpenModal(false)
+      setOpenModal(false);
       history.push("/");
     });
   };
@@ -114,6 +117,12 @@ const EditableItem = (props) => {
                 />
               ) : (
                 <div className="modal_content">
+                  <button
+                    onClick={() => setOpenModal(false)}
+                    className="close__btn"
+                  >
+                    X
+                  </button>
                   Select an option:
                   <div className="options__holder">
                     <div className="label__holder">
