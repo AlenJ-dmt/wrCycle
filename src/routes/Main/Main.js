@@ -23,16 +23,17 @@ const Main = () => {
       startDate.getMonth() + 1
     }/${startDate.getDate()}/${startDate.getFullYear()}`;
 
-    WheelAPiService.getRepairsByDate(pickedDate)
-      .then((wRepairList) => {
-        context.setMainList(wRepairList);
-      })
-      .catch((err) => console.log(err));
+    // WheelAPiService.getRepairsByDate(pickedDate)
+    //   .then((wRepairList) => {
+    //     context.setMainList(wRepairList);
+    //   })
+    //   .catch((err) => console.log(err));
 
     let counter = 0;
 
     WheelAPiService.getNotReadyRepair()
       .then((jsonRes) => {
+        context.setMainList(jsonRes);
         jsonRes.forEach(
           (repair) => (counter = counter + parseInt(repair.quantity))
         );
