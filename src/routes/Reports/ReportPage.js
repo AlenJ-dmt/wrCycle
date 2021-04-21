@@ -12,6 +12,7 @@ const ReportPage = () => {
   const [polishCounter, setPolishedCounter] = useState(0);
   const [multiCounter, setMultiCounter] = useState(0);
   const [startDate, setStartDate] = useState(new Date());
+  const [listStyle, setListStyle] = useState("all");
 
   const contexto = useContext(WheelContext);
 
@@ -70,9 +71,23 @@ const ReportPage = () => {
   };
 
   const populateReportList = () => {
-    return contexto.reportList.map((wheel, idx) => (
-      <EditableItem key={idx} wheelInfo={wheel} />
-    ));
+    if (listStyle === "all") {
+      return contexto.reportList.map((wheel, idx) => (
+        <EditableItem key={idx} wheelInfo={wheel} />
+      ));
+    } else if (listStyle === "machined") {
+      return contexto.reportList.map((wheel, idx) => {
+        if (wheel.machine) {
+          return <EditableItem key={idx} wheelInfo={wheel} />;
+        }
+      });
+    } else if (listStyle === "polished") {
+      return contexto.reportList.map((wheel, idx) => {
+        if (wheel.polished) {
+          return <EditableItem key={idx} wheelInfo={wheel} />;
+        }
+      });
+    }
   };
 
   return (
@@ -91,6 +106,32 @@ const ReportPage = () => {
         <p>Machine: {machineCounter} </p>
         <p>Poslished: {polishCounter} </p>
         <p>2 || 3 Piece Wheel: {multiCounter} </p>
+      </div>
+      <div className="wheel__style__container">
+        <div className="inside__style_holder">
+          <label>All</label>
+          <input className="wheel__style__checkBox"
+            onChange={() => setListStyle("all")}
+            name="wheelStyle"
+            type="radio"
+          />
+        </div>
+        <div className="inside__style_holder">
+          <label>Machined</label>
+          <input className="wheel__style__checkBox"
+            onChange={() => setListStyle("machined")}
+            name="wheelStyle"
+            type="radio"
+          />
+        </div>
+        <div className="inside__style_holder">
+          <label>Polished</label>
+          <input className="wheel__style__checkBox"
+            onChange={() => setListStyle("polished")}
+            name="wheelStyle"
+            type="radio"
+          />
+        </div>
       </div>
       {populateReportList()}
     </section>

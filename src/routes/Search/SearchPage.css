@@ -1,9 +1,13 @@
-.search__page{
-    margin-top: 90px;
-    text-align: center;
+.search__page {
+  margin-top: 90px;
+  text-align: center;
 }
-.loading__container{
-    margin: 0 auto;
-    height: 667px;
-    width: 375px;
+.loading__container {
+  margin: 0 auto;
+  height: 667px;
+  width: 375px;
+}
+.error__msg {
+  font-size: 30px;
+  color: rgb(255, 3, 3);
 }

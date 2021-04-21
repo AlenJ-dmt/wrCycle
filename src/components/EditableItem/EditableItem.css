@@ -21,7 +21,7 @@
   font-size: 50px;
   display: flex;
   flex: 1;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 .right__container {
   display: flex;
@@ -79,7 +79,7 @@
   height: 30px;
   width: 30px;
 }
-.close__btn{
+.close__btn {
   border: none;
   height: 20px;
   width: 20px;
@@ -89,4 +89,7 @@
   position: relative;
   top: 0px;
   left: 20px;
+}
+.description__holder {
+  font-size: 25px;
 }

@@ -6,26 +6,32 @@ import ReactLoading from "react-loading";
 
 const SearchPage = () => {
   const context = useContext(wheelcontext);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const [err, setErr] = useState(false);
 
-  useEffect(() => {
-    setIsLoading(false)
-    
-  },[])
+  // useEffect(() => {
+  //   setIsLoading(false);
+  // }, []);
 
   const populateResults = () => {
-    let content =  context.searchResult.map((result, idx) => (
+    if (context.searchResult.length < 1) {
+      setErr(true);
+      return;
+    }
+    let content = context.searchResult.map((result, idx) => (
       <EditableItem key={idx} wheelInfo={result} />
     ));
-    
-    return content
+
+    return content;
   };
 
   return (
     <section className="search__page">
       <h1>Resultados</h1>
-      {isLoading ? (
-        <div className="loading__container"><ReactLoading type="bubbles" color="gray" height={667} width={375} /></div>
+      {err ? (
+        <div className="error__msg" >
+          <p>There are no results for your search!</p>
+        </div>
       ) : (
         <div>{populateResults()}</div>
       )}

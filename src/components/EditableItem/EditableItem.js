@@ -18,7 +18,7 @@ const EditableItem = (props) => {
     salesperson,
     invoice,
     quantity,
-    descriptions,
+    description,
     created,
     eta,
     phone,
@@ -70,7 +70,7 @@ const EditableItem = (props) => {
       salesperson,
       invoice,
       quantity,
-      descriptions,
+      descriptions: description,
       created,
       eta,
       phone,
@@ -99,7 +99,7 @@ const EditableItem = (props) => {
           <p>#{invoice}</p>
         </div>
         <p>{salesperson}</p>
-        <p>{created}</p>
+        <p>{description}</p>
       </div>
       <div className="right__container">
         {isready === false ? (
@@ -199,6 +199,7 @@ const EditableItem = (props) => {
           </div>
         ) : (
           <div className="listo__container">
+            <p className="description__holder">{`QTY: ${quantity}`}</p>
             <p>Ready</p>
             <div className="icon__container">
               <ImCheckboxChecked color="green" />

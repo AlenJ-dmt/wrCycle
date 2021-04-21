@@ -11,3 +11,18 @@
   justify-content: space-evenly;
   text-align: left;
 }
+.wheel__style__container{
+  display: flex;
+  justify-content: space-evenly;
+  width: 60%;
+  margin: 0 auto;
+}
+.inside__style_holder{
+  display: flex;
+  width: 30%;
+  justify-content: space-evenly;
+  font-weight: 600;
+}
+.wheel__style__checkBox{
+  transform: scale(1.5);
+}
