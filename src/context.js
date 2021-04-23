@@ -9,6 +9,9 @@ const WheelContext = React.createContext({
   setMainList: () => {},
   invoiceNumber: "",
   setInvoiceNumber: () => {},
+  noInternetError: "NO INTERNET CONNECTION",
+  internet: true,
+  setInternet: () => {},
   textMessage:
     "Thank you for your business, Your wheel is ready to be pick up!",
 });
@@ -21,15 +24,23 @@ export class WheelProvider extends React.Component {
     mainList: [],
     reportList: [],
     invoiceNumber: "",
+    noInternetError: "NO INTERNET CONNECTION",
+    internet: true,
     textMessage:
       "Thank you for your business, Your wheel is ready to be pick up!",
   };
 
-  setInvoiceNumber = (num) =>{
+  setInternet = (value) => {
     this.setState({
-      invoiceNumber: num
-    })
-  }
+      internet: value,
+    });
+  };
+
+  setInvoiceNumber = (num) => {
+    this.setState({
+      invoiceNumber: num,
+    });
+  };
   setReportList = (rList) => {
     this.setState({
       reportList: rList,
@@ -58,6 +69,9 @@ export class WheelProvider extends React.Component {
       setReportList: this.setReportList,
       invoiceNumber: this.state.invoiceNumber,
       setInvoiceNumber: this.setInvoiceNumber,
+      noInternetError: "NO INTERNET CONNECTION",
+      internet: this.state.internet,
+      setInternet: this.setInternet,
     };
 
     return (

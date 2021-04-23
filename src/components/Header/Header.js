@@ -17,10 +17,16 @@ const Header = () => {
   };
 
   const findWheel = (searchedWheel) => {
-    WheelApiService.searchInvoice(searchedWheel).then((wr) => {
-      context.setResults(wr);
-    });
-    searchedWheel = "";
+    // WheelApiService.searchInvoice(searchedWheel).then((wr) => {
+    //   context.setInternet(true)
+    //   context.setResults(wr);
+    // }).catch(err => {
+    //   context.setInternet(false)
+    // });
+
+    context.setInvoiceNumber(searchedWheel);
+
+    setWheelInvoice("");
     history.push("/search");
   };
 
