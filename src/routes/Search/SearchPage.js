@@ -14,10 +14,11 @@ const SearchPage = () => {
   // }, []);
 
   const populateResults = () => {
-    if (context.searchResult.length < 1) {
-      setErr(true);
-      return;
-    }
+    //  console.log(context.searchResult.length)
+    // if (context.searchResult.length < 1) {
+    //   setErr(true);
+    //   return;
+    // }
     let content = context.searchResult.map((result, idx) => (
       <EditableItem key={idx} wheelInfo={result} />
     ));

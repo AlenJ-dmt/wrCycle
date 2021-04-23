@@ -5,6 +5,7 @@ import WheelApiService from "../../services/wheel-api-service";
 import wheelContext from "../../context";
 import { useHistory } from "react-router-dom";
 import { ImCheckboxChecked } from "react-icons/im";
+import {AiFillEdit} from "react-icons/ai"
 import ReactLoading from "react-loading";
 
 const EditableItem = (props) => {
@@ -192,7 +193,7 @@ const EditableItem = (props) => {
               </div>
               <CustomButtom
                 onClickDo={() => setOpenModal(true)}
-                title="Terminar"
+                title="Finish"
                 color="#12CA13"
               />
             </div>
@@ -206,6 +207,7 @@ const EditableItem = (props) => {
             </div>
           </div>
         )}
+        <AiFillEdit title={"edit"} onClick={() => console.log("ping")} />
       </div>
     </div>
   );

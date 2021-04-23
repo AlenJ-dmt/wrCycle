@@ -71,6 +71,14 @@ const ReportPage = () => {
   };
 
   const populateReportList = () => {
+    let accurences = { 1: 0, 2: 0, 3: 0, 4: 0 };
+
+    contexto.reportList.map((wheel, idx) => {
+      if (wheel.quantity in accurences) {
+        accurences[wheel.quantity] = accurences[wheel.quantity] + 1;
+      }
+    });
+    console.log(accurences);
     if (listStyle === "all") {
       return contexto.reportList.map((wheel, idx) => (
         <EditableItem key={idx} wheelInfo={wheel} />
@@ -110,7 +118,8 @@ const ReportPage = () => {
       <div className="wheel__style__container">
         <div className="inside__style_holder">
           <label>All</label>
-          <input className="wheel__style__checkBox"
+          <input
+            className="wheel__style__checkBox"
             onChange={() => setListStyle("all")}
             name="wheelStyle"
             type="radio"
@@ -118,7 +127,8 @@ const ReportPage = () => {
         </div>
         <div className="inside__style_holder">
           <label>Machined</label>
-          <input className="wheel__style__checkBox"
+          <input
+            className="wheel__style__checkBox"
             onChange={() => setListStyle("machined")}
             name="wheelStyle"
             type="radio"
@@ -126,7 +136,8 @@ const ReportPage = () => {
         </div>
         <div className="inside__style_holder">
           <label>Polished</label>
-          <input className="wheel__style__checkBox"
+          <input
+            className="wheel__style__checkBox"
             onChange={() => setListStyle("polished")}
             name="wheelStyle"
             type="radio"

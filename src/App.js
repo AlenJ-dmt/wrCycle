@@ -5,6 +5,7 @@ import Main from "./routes/Main/Main";
 import Header from "./components/Header/Header";
 import SearchPage from "./routes/Search/SearchPage";
 import ReportPage from "./routes/Reports/ReportPage";
+import EditScreen from "./routes/Edit/EditScreen"
 import { ImStatsBars } from "react-icons/im";
 import { useHistory } from "react-router-dom";
 
@@ -26,6 +27,9 @@ function App() {
         </Route>
         <Route path="/reports">
           <ReportPage />
+        </Route>
+        <Route exact path="/edit/:invoiceNum">
+          <EditScreen />
         </Route>
         <Route path="/">
           <Main />
